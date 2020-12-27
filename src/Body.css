@@ -1,0 +1,44 @@
+.body {
+    flex: 0.8;
+    background: linear-gradient(rgb(91, 87, 115), rgba(0,0,0,1));
+    height: 100vh;
+    color: #ffffff;
+    padding: 1.25rem;
+    overflow-y: overlay;
+}
+.body::-webkit-scrollbar {
+    display: none;
+}
+.body_info {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+}
+.body_info img {
+    height: 30vh;
+    box-shadow: 0 4px 60px rgba(0,0,0,1);
+}
+.body_infotext {
+    flex: 1;
+}
+.body_infotext h2 {
+    font-size: 2.75rem;
+}
+.body_infotext p { 
+    font-size: 0.9rem;
+}
+.body_shuffle {
+    font-size: 60px !important;
+}
+.body_shuffle:hover {
+    transition: transform 100ms ease-in;
+    transform: scale(1.08);
+}
+.body_icons {
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+.body_songs {
+    margin: 20px 0;
+}

@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.header_left {
+    flex: 0.6;
+    min-width: 70px;
+    background-color: #ffffff;
+    color: grey;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;   
+}
+.header_left input {
+    border: none;
+    width: 100%;
+    background-color: transparent;
+}
+.header_right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

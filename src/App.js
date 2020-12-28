@@ -9,7 +9,7 @@ import { useStateValue } from './StateProvider';
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const[{user, token}, dispatch] = useStateValue();
+  const[{ token}, dispatch] = useStateValue();
  
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -18,11 +18,23 @@ function App() {
 
     if(_token) {
       spotify.setAccessToken(_token);
+
       dispatch({
         type: 'SET_TOKEN',
         token: _token,
       })
-      
+
+      spotify.getMyTopArtists().then((res) => {
+        dispatch({
+          type: 'SET_TOP_ARTISTS',
+          top_artists: res,
+        })
+      })
+
+      dispatch({
+        type: 'SET_SPOTIFY',
+        spotify: spotify, 
+      })
       
       spotify.getMe().then(user => {
         dispatch({
@@ -46,7 +58,7 @@ function App() {
       })
     }
     
-  }, []);
+  }, [token, dispatch]);
 
 
   return (
